@@ -4,18 +4,18 @@ variables:
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
-  jobs:
+  jobs: 
   - job: 'Build'
     displayName: 'Build job'
     pool:
       vmImage: 'Ubuntu-16.04'
-      demands: 
+      demands:
         - npm
-    
+
     variables:
       wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
       dotnetSdkVersion: '2.1.505'
-      
+
     steps:
     - task: DotNetCoreInstaller@0
       displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
